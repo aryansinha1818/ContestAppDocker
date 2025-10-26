@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: contest-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - contest-net
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: admin
+    depends_on:
+      - mongo
+    networks:
+      - contest-net
+
+  backend:
+    image: aryansinha1818/contestapp-backend:latest
+    container_name: contest-backend
+    restart: always
+    ports:
+      - "5050:5050"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/contestdb
+      PORT: 5050
+      NODE_ENV: development
+      CLIENT_URL: http://localhost:5173
+    depends_on:
+      - mongo
+    networks:
+      - contest-net
+
+  frontend:
+    image: aryansinha1818/contestapp-frontend:latest
+    container_name: contest-frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - contest-net
+
+volumes:
+  mongo_data:
+
+networks:
+  contest-net:
+    driver: bridge
