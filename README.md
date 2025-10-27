@@ -8,9 +8,70 @@
 [![DockerHub](https://img.shields.io/badge/DockerHub-Images-blue?logo=docker&logoColor=white)](https://hub.docker.com/u/aryansinha1818)
 [![Git](https://img.shields.io/badge/Git-Version%20Control-black?logo=git)](https://git-scm.com/)
 
+# 🚀 ContestApp | Node.js + Express + React + MongoDB + Docker
+
+ContestApp is a full-stack platform designed to manage and conduct online coding or quiz contests efficiently.
+It offers separate modules for Admins and Users, a real-time leaderboard, and a resume-later system, ensuring a complete end-to-end contest experience.
+
+🌟 Core Features
+* 👑 Admin-Level Controls
+
+Admins have a dedicated panel with full control over the contest system:
+
+- 🧩 Create, Edit & Delete Contests – Define contest title, description, duration, and difficulty.
+- ✍️ Add or Modify Questions – Create multiple-choice or descriptive questions.
+- 📊 View Leaderboards in Real-Time – Instantly see how users are performing.
+- 🧠 Manage Users – Approve participants, view submissions, and track scores.
+
+🧑‍💻 User Functionality
+
+For participants, ContestApp offers a smooth and fair experience:
+
+* 🔐 JWT Authentication – Secure signup/login system.
+* 🧠 Attempt Contests – Join active contests and answer questions.
+* 💾 Save Progress – Automatically saves answers as you go; resume anytime.
+* 📈 View Score & Rank – Users can view their score instantly after submission.
+* 🏅 Leaderboard – Displays rankings, top scorers, and average time taken.
+* 📜 View Past Contests – Review previous performances and answers.
+
+  
+🧠 Question Management
+
+The platform supports flexible and intelligent question handling:
+
++ ✅ Multiple-Choice Questions (MCQs) with single or multiple correct options.
++ 🕹️ Randomized Question Order for fairness.
++ 🧩 Auto-Grading System for objective questions.
++ 💾 Data Schema – Designed using Mongoose with efficient indexing for speed.
++ 📊 Score Calculation Logic
+
+- All this happens in real-time, ensuring instant leaderboard updates.
+
+⚙️ Run Using Docker
+
+🏗️ Build & Run All Services
+```
+docker-compose up --build
+```
+
+🌐 Access
+Service	              URL
+Frontend	      http://localhost:5173
+
+Backend	        http://localhost:5050/api
+
+Mongo Express	  http://localhost:8081
 
 
-
+🧱 Tech Stack
+* Layer	Technologies
+* Frontend	React, Vite
+* Backend	Node.js, Express.js
+* Database	MongoDB, Mongoose
+* Authentication	JWT
+* Deployment	Docker, Docker Compose
+* Testing	Postman
+* Tools	Git, Mongo Express
 
 🙋‍♂️ Author
 
