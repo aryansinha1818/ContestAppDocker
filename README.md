@@ -56,11 +56,11 @@ docker-compose up --build
 
 🌐 Access
 Service	              URL
-Frontend	      http://localhost:5173
+- Frontend	      http://localhost:5173
 
-Backend	        http://localhost:5050/api
+- Backend	        http://localhost:5050/api
 
-Mongo Express	  http://localhost:8081
+- Mongo Express	  http://localhost:8081
 
 
 🧱 Tech Stack
